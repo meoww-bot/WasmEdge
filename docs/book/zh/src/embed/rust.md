@@ -1,9 +1,8 @@
 # Rust SDK
 
-
 你可以通过 WasmEdge Rust SDK 将 WasmEdge 嵌入到 Rust 应用程序中。
 
-WasmEdge Rust SDK 涉及两个 Rust crate [wasmedge-sys](https://crates.io/crates/wasmedge-sys) 和 [wasmedge-rs](https://crates.io/crates/wasmedge-sdk），它们根据不同的原则和不同的目的设计。 wasmedge-sys crate 定义了一组底层 Rust API，其仅仅是对 WasmEdge C API 进行封装，以提供相应的安全接口，而 wasmedge-rs crate 提供更优雅和符合人体工程学的 API，更适合应用程序开发。
+WasmEdge Rust SDK 涉及两个 Rust crate [wasmedge-sys](https://crates.io/crates/wasmedge-sys) 和 [wasmedge-rs](<https://crates.io/crates/wasmedge-sdk>），它们根据不同的原则和不同的目的设计。 wasmedge-sys crate 定义了一组底层 Rust API，其仅仅是对 WasmEdge C API 进行封装，以提供相应的安全接口，而 wasmedge-rs crate 提供更优雅和符合人体工程学的 API，更适合应用程序开发。
 
 * [wasmedge-sys](https://crates.io/crates/wasmedge-sys) crate 定义了一组底层 Rust API，其仅仅是对 WasmEdge C API 进行封装，以提供相应的安全接口。 [wasmedge-sys](https://crates.io/crates/wasmedge-sys) 更适合作为基础库，为面向应用的更高层 Rust 库提供服务。
 
@@ -12,7 +11,7 @@ WasmEdge Rust SDK 涉及两个 Rust crate [wasmedge-sys](https://crates.io/crate
 ## 构建 `wasmedge-sys`
 
 1. `wasmedge-sys` 依赖于 `WasmEdge` 的核心库及必要的头文件。
-2.  为了通过 cargo build 命令构建 wasmedge-sys 。
+2. 为了通过 cargo build 命令构建 wasmedge-sys 。
 
 * 通过指定 `WASMEDGE_INCLUDE_DIR` 和 `WASMEDGE_LIB_DIR`
 
@@ -54,7 +53,6 @@ WasmEdge Rust SDK 涉及两个 Rust crate [wasmedge-sys](https://crates.io/crate
   * 假设在 `~/workspace/me/WasmEdge` 中 `git clone` WasmEdge repo，并按照 [instructions](https://wasmedge.org/book/en/extend/build.html) 构建 WasmEdge native library 生成 `include` 和 `lib` 目录应该在 `~/workspace/me/WasmEdge/build` 中。
 
   * 设置 `WASMEDGE_BUILD_DIR` 环境变量并指定 `build` 目录，进入 `wasmedge-sys` 目录和 `cargo build` crate。
-
 
       ```bash
       root@0a877562f39e:~/workspace/me/WasmEdge# export WASMEDGE_BUILD_DIR=/root/workspace/me/WasmEdge/build
